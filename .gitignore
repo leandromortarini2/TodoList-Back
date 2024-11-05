@@ -1,0 +1,9 @@
+# Ignorar la carpeta de node_modules
+node_modules/
+
+# Ignorar archivos de variables de entorno
+.env
+.env.local
+.env.development
+.env.test
+.env.production
