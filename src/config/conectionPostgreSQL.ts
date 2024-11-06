@@ -1,0 +1,16 @@
+import pg from "pg";
+
+// comando de instalacion en ts :  npm i --save-dev @types/pg
+
+// conexion con la base de datos
+import dotenv from "dotenv";
+
+dotenv.config();
+
+export const pool = new pg.Pool({
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_DATABASE,
+  password: process.env.DB_PASSWORD,
+  port: Number(process.env.DB_PORT),
+});

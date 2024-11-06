@@ -2,7 +2,6 @@ import express from "express";
 import router from "./routes/routes";
 import cors from "cors";
 import morgan from "morgan";
-
 const server = express();
 
 // Middleware para habilitar CORS

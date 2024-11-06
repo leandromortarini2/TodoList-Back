@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 import {
   allTasksService,
   createTaskService,
-  editTaskService,
+  editTaskStatusService,
 } from "../services/services";
 
 export const allTasks = async (req: Request, res: Response) => {
@@ -23,12 +23,13 @@ export const createTask = async (req: Request, res: Response) => {
 export const editTask = async (req: Request, res: Response) => {
   const { id } = req.params;
 
-  const result = await editTaskService(Number(id));
+  const result = await editTaskStatusService(Number(id));
 
-  if (result.includes("updated successfully")) {
+  try {
     res.status(200).json({ message: result });
-  } else {
-    // Si el resultado indica algún error
+  } catch (error) {
     res.status(400).json({ error: result });
   }
+
+  // Si el resultado indica algún error
 };
