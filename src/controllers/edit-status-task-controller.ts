@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { editTaskStatusService } from "../services/edit-status-task-service";
 
-export const editTask = async (req: Request, res: Response) => {
+export const editStatusTask = async (req: Request, res: Response) => {
   const { id } = req.params;
 
   const result = await editTaskStatusService(Number(id));
